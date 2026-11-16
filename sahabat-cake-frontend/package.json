@@ -1,0 +1,14 @@
+{
+  "name": "sahabat-cake",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install && npm --prefix server install && npm --prefix client install",
+    "dev": "concurrently -n api,web -c blue,green \"npm --prefix server run dev\" \"npm --prefix client run dev\"",
+    "build": "npm --prefix client run build",
+    "seed": "npm --prefix server run seed",
+    "seed:reset": "npm --prefix server run seed:reset",
+    "kill-port": "npx kill-port 4000",
+    "start": "npm --prefix server start"
+  },
+  "devDependencies": { "concurrently": "^8.2.2" }
+}
